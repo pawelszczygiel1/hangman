@@ -2,8 +2,8 @@ from Game import Game
 
 
 def main():
-    game = Game(1, 1)
-    game.single_player_game()
+    game = Game(input("Podaj liczbę graczy"), input("Podaj liczbę rund"))
+    game.start_game()
 
 
 if __name__ == "__main__":

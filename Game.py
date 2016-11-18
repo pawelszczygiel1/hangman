@@ -1,5 +1,6 @@
 import utils
 import random
+import getpass
 
 
 class Game:
@@ -12,13 +13,29 @@ class Game:
         self.rounds_number = rounds_number
 
     def start_game(self):
-        self.single_player_game()
+        if self.players_number == 1:
+            self.single_player_game()
+        elif self.players_number == 2:
+            self.two_players_game()
+        else:
+            print("Wrong number of players - end of program")
 
     def single_player_game(self):
         points = 0
         for i in range(self.rounds_number):
-            word = list(self.data_base[random.randint(1, len(self.data_base))])
-            points += self.guess(word)
+            points += self.guess(list(self.data_base[random.randint(0, len(self.data_base))]))
+
+    def two_players_game(self):
+        first_player_points = 0
+        second_player_points = 0
+        for i in range(self.rounds_number):
+            first_player_points += self.guess(list(getpass.getpass("Word for first player to guess")))
+            second_player_points += self.guess(list(getpass.getpass("Word for second player to guess")))
+
+        if first_player_points == second_player_points:
+            print("draw")
+        else:
+            print("".join(["First" if first_player_points > second_player_points else "Second", "won"]))
 
     def guess(self, word):
         current_state_of_guessing = list("_" * len(word))
@@ -51,7 +68,7 @@ class Game:
 
         print("".join(["Hasłem było: ", "".join(word)]))
         return 0
-    
+
     @staticmethod
     def wrong_guess_message(guesses_left, current_state_of_guessing):
         print("Wrong guess")
