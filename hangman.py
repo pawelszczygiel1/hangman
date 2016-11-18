@@ -1,8 +1,9 @@
+from Game import Game
 
 
 def main():
-    a = "b" * 10
-    print(a)
+    game = Game(1, 1)
+    game.single_player_game()
 
 
 if __name__ == "__main__":
