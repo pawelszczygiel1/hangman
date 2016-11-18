@@ -51,19 +51,22 @@ class Game:
 
         print("".join(["Hasłem było: ", "".join(word)]))
         return 0
-
-    def wrong_guess_message(self, guesses_left, current_state_of_guessing):
+    
+    @staticmethod
+    def wrong_guess_message(guesses_left, current_state_of_guessing):
         print("Wrong guess")
         print("".join(current_state_of_guessing))
         print("Guesses left:")
         print(guesses_left)
 
-    def correct_guessed_letter(self, guesses_left, current_message_of_guessing):
+    @staticmethod
+    def correct_guessed_letter(guesses_left, current_message_of_guessing):
         print("Correct guess")
         print("".join(current_message_of_guessing))
         print("Guesses left:")
         print(guesses_left)
 
-    def correct_guessed_word(self, word):
+    @staticmethod
+    def correct_guessed_word(word):
         print("You guessed word")
         print("".join(word))
