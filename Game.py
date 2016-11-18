@@ -66,7 +66,7 @@ class Game:
                         current_state_of_guessing[j] = players_guess
                     self.correct_guessed_letter(guesses_left, current_state_of_guessing)
 
-        print("".join(["Hasłem było: ", "".join(word)]))
+        print("".join(["It was: ", "".join(word)]))
         return 0
 
     @staticmethod

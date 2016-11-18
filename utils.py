@@ -1,7 +1,8 @@
 __name__ = "utils"
 
+
 def read_guess():
-    return input("Podaj swój strzał: ")
+    return input("Enter your try: ")
 
 
 def read_data_base(file_name):

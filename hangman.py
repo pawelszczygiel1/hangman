@@ -2,7 +2,7 @@ from Game import Game
 
 
 def main():
-    game = Game(input("Podaj liczbę graczy"), input("Podaj liczbę rund"))
+    game = Game(int(input("Enter players number")), int(input("Enter rounds number")))
     game.start_game()
 
 
